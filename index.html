@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 16 Pro Max Interface By VanDung - Responsive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        
+        .iphone {
+            position: relative;
+            width: 100%;
+            max-width: 375px;
+            height: auto;
+            aspect-ratio: 375/812;
+            background-color: #000;
+            border-radius: 50px;
+            overflow: hidden;
+            border: 8px solid #1a1a1a;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/375/812');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+        
+        .notch {
+            position: absolute;
+            width: 40%;
+            max-width: 150px;
+            height: 30px;
+            background: #000;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom-left-radius: 18px;
+            border-bottom-right-radius: 18px;
+            z-index: 10;
+        }
+        
+        .status-bar {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 100%;
+            padding: 5px 15px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 5;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .time {
+            font-weight: bold;
+        }
+        
+        .status-icons {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .home-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            gap: 10px;
+            padding: 60px 15px 100px;
+        }
+        
+        .app-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .icon {
+            width: 100%;
+            max-width: 60px;
+            aspect-ratio: 1/1;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 5px;
+            transition: transform 0.1s ease;
+        }
+        
+        .icon-name {
+            font-size: 10px;
+            color: white;
+            text-align: center;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .dock {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+        .dock .icon {
+            margin-bottom: 0;
+        }
+        
+        /* Media Queries for better responsiveness */
+        @media (max-width: 400px) {
+            .iphone {
+                border-radius: 40px;
+                border-width: 6px;
+            }
+            
+            .notch {
+                height: 25px;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+            
+            .status-bar {
+                font-size: 10px;
+            }
+            
+            .home-screen {
+                gap: 8px;
+                padding: 50px 10px 90px;
+            }
+            
+            .icon {
+                font-size: 20px;
+            }
+            
+            .icon-name {
+                font-size: 9px;
+            }
+            
+            .dock {
+                height: 60px;
+                border-radius: 25px;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .home-screen {
+                gap: 5px;
+                padding: 45px 8px 80px;
+            }
+            
+            .icon {
+                font-size: 18px;
+            }
+            
+            .icon-name {
+                font-size: 8px;
+            }
+        }
+        
+        /* Landscape mode */
+        @media (max-width: 812px) and (orientation: landscape) {
+            body {
+                align-items: flex-start;
+                padding: 10px;
+            }
+            
+            .iphone {
+                max-height: 95vh;
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="iphone">
+        <div class="notch"></div>
+        <div class="screen">
+            <div class="status-bar">
+                <div class="time">9:41</div>
+                <div class="status-icons">
+                    <div class="signal">📶</div>
+                    <div class="wifi">📡</div>
+                    <div class="battery">🔋</div>
+                </div>
+            </div>
+            
+            <div class="home-screen">
+                <!-- Hàng 1 -->
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #5AC8FA;">📱</div>
+                    <div class="icon-name">Điện thoại</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #34C759;">💬</div>
+                    <div class="icon-name">Tin nhắn</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #007AFF;">🧭</div>
+                    <div class="icon-name">Safari</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #FF2D55;">🎵</div>
+                    <div class="icon-name">Nhạc</div>
+                </div>
+                
+                <!-- Hàng 2 -->
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #FF3B30;">📧</div>
+                    <div class="icon-name">Mail</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #FFCC00;">📝</div>
+                    <div class="icon-name">Ghi chú</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #4CD964;">📚</div>
+                    <div class="icon-name">Sách</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #FF9500;">📅</div>
+                    <div class="icon-name">Lịch</div>
+                </div>
+                
+                <!-- Hàng 3 -->
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #5856D6;">📷</div>
+                    <div class="icon-name">Camera</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #007AFF;">🌤️</div>
+                    <div class="icon-name">Thời tiết</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #AF52DE;">⏰</div>
+                    <div class="icon-name">Đồng hồ</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #FF2D55;">🏋️</div>
+                    <div class="icon-name">Sức khỏe</div>
+                </div>
+                
+                <!-- Hàng 4 -->
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #4CD964;">🧮</div>
+                    <div class="icon-name">Máy tính</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #FF3B30;">🗺️</div>
+                    <div class="icon-name">Bản đồ</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #5AC8FA;">⚙️</div>
+                    <div class="icon-name">Cài đặt</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #FFCC00;">🎮</div>
+                    <div class="icon-name">Trò chơi</div>
+                </div>
+                
+                <!-- Hàng 5 -->
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #FF9500;">💳</div>
+                    <div class="icon-name">Wallet</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #5856D6;">🎬</div>
+                    <div class="icon-name">TV</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #AF52DE;">🛒</div>
+                    <div class="icon-name">App Store</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #007AFF;">📸</div>
+                    <div class="icon-name">Ảnh</div>
+                </div>
+            </div>
+            
+            <div class="dock">
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #5AC8FA;">📱</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #34C759;">💬</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #007AFF;">🧭</div>
+                </div>
+                <div class="app-icon">
+                    <div class="icon" style="background-color: #FF2D55;">🎵</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cập nhật thời gian hiện tại
+        function updateTime() {
+            const now = new Date();
+            const timeElement = document.querySelector('.time');
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            timeElement.textContent = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+        }
+        
+        // Gọi hàm cập nhật thời gian
+        updateTime();
+        setInterval(updateTime, 60000); // Cập nhật mỗi phút
+        
+        // Hiệu ứng nhấp vào biểu tượng
+        const appIcons = document.querySelectorAll('.app-icon');
+        appIcons.forEach(icon => {
+            icon.addEventListener('click', function() {
+                this.querySelector('.icon').style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    this.querySelector('.icon').style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
